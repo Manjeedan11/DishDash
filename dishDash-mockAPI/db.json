@@ -5,10 +5,11 @@
       "title": "Creamy Garlic Pasta",
       "description": "A delicious and creamy pasta dish with a rich garlic sauce that that's perfect for a quick weeknight dinner.",
       "rating": 4,
-      "cookingTime": 25,
+      "prepTime": 10,
+      "cookTime": 15,
       "difficulty": "Medium",
       "servings": 4,
-      "image": "",
+      "image": "https://ik.imagekit.io/f10phwyh5/dishDash-recipeSharing-project/creamyGarlicPasta.jpg?updatedAt=1744033490947",
       "ingredients": [
         "8 oz pasta of your choice",
         "4 cloves garlic, minced",
