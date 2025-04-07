@@ -1,0 +1,39 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Creamy Garlic Pasta",
+      "description": "A delicious and creamy pasta dish with a rich garlic sauce that that's perfect for a quick weeknight dinner.",
+      "rating": 4,
+      "cookingTime": 25,
+      "difficulty": "Medium",
+      "servings": 4,
+      "image": "",
+      "ingredients": [
+        "8 oz pasta of your choice",
+        "4 cloves garlic, minced",
+        "2 tbsp butter",
+        "1 cup heavy cream",
+        "1/2 cup grated parmesan cheese",
+        "Salt and pepper to taste",
+        "Fresh parsley for garnish"
+      ],
+      "instructions": [
+        "Bring a large pot of salted water to a boil. Add pasta and cook according to package instructions until Al Dente.",
+        "While pasta is cooking, melt butter in a large skillet over medium heat. Add minced garlic and sauté for 1-2 minutes until fragrant.",
+        "Pour in the heavy cream and bring to a simmer. Cook for 3-4 minutes until it starts to thicken slightly.",
+        "Stir in the parmesan cheese until melted and smooth. Season with salt and pepper to taste.",
+        "Drain the pasta, reserving 1/4 cup of pasta water. Add the pasta to the sauce, tossing to coat. If needed, add some reserved pasta water to thin the sauce.",
+        "Garnish with fresh parsley and additional parmesan cheese if desired. Serve immediately."
+      ]
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "email": "johndoe@gmail.com",
+      "password": "Johndoe@2025"
+    }
+  ]
+}
