@@ -15,14 +15,20 @@ interface RecipeFeedProps {
 
 export default function RecipeFeed({ recipes }: RecipeFeedProps) {
   if (recipes.length === 0) {
-    return <EmptyState />;
+    return (
+      <div className="max-w-screen-xl mx-auto px-4 pb-16">
+        <EmptyState />
+      </div>
+    );
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8 pb-16 mt-6">
-      {recipes.map((recipe) => (
-        <RecipeCard key={recipe.id} recipe={recipe} />
-      ))}
+    <div className="max-w-screen-xl mx-auto px-4 pb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))}
+      </div>
     </div>
   );
 }
