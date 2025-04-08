@@ -6,7 +6,9 @@
     },
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "moduleResolution": "node"
   },
   "include": ["src"]
 }

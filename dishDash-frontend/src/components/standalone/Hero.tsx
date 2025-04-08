@@ -2,6 +2,8 @@ import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
+  const heroBanner = import.meta.env.VITE_HERO_BANNER;
+
   return (
     <section className="relative bg-gradient-to-r from-orange-50 to-amber-100 overflow-hidden">
       <div className="max-w-screen-xl mx-auto px-25 py-25 md:py-24">
@@ -23,7 +25,7 @@ export default function Hero() {
           </div>
           <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
             <img
-              src="https://ik.imagekit.io/f10phwyh5/dishDash-recipeSharing-project/heroCooking.png?updatedAt=1744107628823"
+              src={heroBanner}
               alt="Cooking"
               className="w-full h-full object-cover"
             />
