@@ -1,4 +1,7 @@
-import React, { useState, FormEvent } from "react";
+"use client";
+
+import type React from "react";
+import { useState } from "react";
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,12 +16,12 @@ import {
 } from "@/components/ui/card";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 
-const SignInPage: React.FC = () => {
+export default function SignInPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Sign in with:", { email, password });
   };
@@ -91,7 +94,7 @@ const SignInPage: React.FC = () => {
               Sign In
             </Button>
             <p className="mt-4 text-center text-sm text-muted-foreground">
-              Don't have an account?{" "}
+              Don’t have an account?{" "}
               <Link to="/signUp" className="text-orange-500 hover:underline">
                 Sign Up
               </Link>
@@ -101,6 +104,4 @@ const SignInPage: React.FC = () => {
       </Card>
     </div>
   );
-};
-
-export default SignInPage;
+}
