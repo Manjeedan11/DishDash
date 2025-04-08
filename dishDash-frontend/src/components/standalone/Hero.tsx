@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Hero() {
   return (
     <section className="relative bg-gradient-to-r from-orange-50 to-amber-100 overflow-hidden">
-      <div className="max-w-screen-xl mx-auto px-12 py-12 md:py-24">
+      <div className="max-w-screen-xl mx-auto px-25 py-25 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -20,6 +20,13 @@ export default function Hero() {
             >
               <Link to="/add-recipes">Add Your Recipe</Link>
             </Button>
+          </div>
+          <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
+            <img
+              src="https://ik.imagekit.io/f10phwyh5/dishDash-recipeSharing-project/heroCooking.png?updatedAt=1744107628823"
+              alt="Cooking"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
