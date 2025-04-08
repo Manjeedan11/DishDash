@@ -16,8 +16,8 @@ export default function SearchFilterBar() {
 
   return (
     <div className="bg-white rounded-lg shadow-sm border p-4 mt-8 max-w-screen-xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-        <div className="relative">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 items-center">
+        <div className="relative w-full">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             type="text"
@@ -29,7 +29,7 @@ export default function SearchFilterBar() {
         </div>
 
         <Select value={category} onValueChange={setCategory}>
-          <SelectTrigger className="w-full md:w-[180px]">
+          <SelectTrigger className="w-[160px]">
             <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
@@ -51,7 +51,7 @@ export default function SearchFilterBar() {
         </Select>
 
         <Select value={cookingTime} onValueChange={setCookingTime}>
-          <SelectTrigger className="w-full md:w-[180px]">
+          <SelectTrigger className="w-[160px]">
             <SelectValue placeholder="Cooking Time" />
           </SelectTrigger>
           <SelectContent>
