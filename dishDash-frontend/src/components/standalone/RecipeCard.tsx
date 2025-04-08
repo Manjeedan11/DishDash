@@ -1,0 +1,52 @@
+import { Link } from "react-router";
+import { Clock, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+interface Recipe {
+  id: string;
+  title: string;
+  cookingTime: number;
+  rating: number;
+  image: string;
+}
+
+interface RecipeCardProps {
+  recipe: Recipe;
+}
+
+export default function RecipeCard({ recipe }: RecipeCardProps) {
+  return (
+    <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+      <div className="relative aspect-video overflow-hidden">
+        <img
+          src={recipe.image || "/placeholder.svg"}
+          alt={recipe.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <CardContent className="p-4">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="font-semibold text-lg line-clamp-1">{recipe.title}</h3>
+          <Badge
+            variant="outline"
+            className="flex items-center gap-1 bg-orange-50"
+          >
+            <Clock className="h-3 w-3" />
+            <span>{recipe.cookingTime} min</span>
+          </Badge>
+        </div>
+        <div className="flex items-center text-amber-500 mb-2">
+          <Star className="h-4 w-4 fill-current" />
+          <span className="ml-1 text-sm">{recipe.rating.toFixed(1)}</span>
+        </div>
+      </CardContent>
+      <CardFooter className="p-4 pt-0">
+        <Button asChild className="w-full bg-orange-500 hover:bg-orange-600">
+          <Link to={`/recipe/${recipe.id}`}>View Recipe</Link>
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
