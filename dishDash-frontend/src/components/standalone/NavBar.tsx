@@ -13,7 +13,7 @@ export default function NavBar() {
   const location = useLocation();
 
   const navLinks = [
-    { name: "Add Recipe", href: "/add-recipe", icon: CookingPot },
+    { name: "Add Recipe", href: "/add-recipes", icon: CookingPot },
     { name: "Favorites", href: "/favorites", icon: Heart },
   ];
 

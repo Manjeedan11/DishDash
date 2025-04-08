@@ -1,5 +1,5 @@
 import NavBar from "@/components/standalone/NavBar";
 
 export default function HomePage() {
-  return <NavBar />;
+  return <div></div>;
 }
