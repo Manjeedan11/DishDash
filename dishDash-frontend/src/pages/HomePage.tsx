@@ -1,6 +1,11 @@
 import Hero from "@/components/standalone/Hero";
-import NavBar from "@/components/standalone/NavBar";
+import SearchFilterBar from "@/components/standalone/SearchFilterBar";
 
 export default function HomePage() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <SearchFilterBar />
+    </>
+  );
 }
