@@ -19,7 +19,7 @@ export default function NavBar() {
 
   return (
     <header className="left-0 sticky top-0 z-50 w-full transition-all duration-200 bg-white/90 backdrop-blur-md shadow-md">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-12 py-6">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-50 py-6">
         <div className="flex items-center gap-10">
           <Link to="/" className="flex items-center gap-2 font-bold text-xl">
             <Flame className="h-6 w-6 text-orange-500" />
