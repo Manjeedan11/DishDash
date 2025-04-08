@@ -12,6 +12,7 @@ import SignUpPage from "./pages/SignUpPage";
 import MainLayout from "./layouts/MainLayout";
 
 import { BrowserRouter, Route, Routes } from "react-router";
+import RecipePage from "./pages/RecipePage";
 
 createRoot(document.getElementById("root")!).render(
   //<StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")!).render(
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/recipe/:id" element={<RecipePage />} />
         <Route path="/add-recipes" element={<AddRecipePage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/signIn" element={<SignInPage />} />
