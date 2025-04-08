@@ -83,6 +83,20 @@ const SignInPage: React.FC = () => {
               </div>
             </div>
           </CardContent>
+          <CardFooter className="flex flex-col">
+            <Button
+              type="submit"
+              className="w-full bg-orange-500 hover:bg-orange-600"
+            >
+              Sign In
+            </Button>
+            <p className="mt-4 text-center text-sm text-muted-foreground">
+              Don't have an account?{" "}
+              <Link to="/signUp" className="text-orange-500 hover:underline">
+                Sign Up
+              </Link>
+            </p>
+          </CardFooter>
         </form>
       </Card>
     </div>
