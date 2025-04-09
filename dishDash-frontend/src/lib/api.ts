@@ -5,6 +5,7 @@ export const Api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000/",
   }),
+  tagTypes: ["Users"],
   endpoints: (builder) => ({
     getRecipes: builder.query<any[], void>({
       query: () => "recipes",
@@ -35,13 +36,15 @@ export const Api = createApi({
 
     getUsers: builder.query<any[], void>({
       query: () => "users",
+      providesTags: ["Users"],
     }),
-    createUsers: builder.mutation<any, Partial<any>>({
+    createUsers: builder.mutation<any, { email: string; password: string }>({
       query: (newUser) => ({
         url: "users",
         method: "POST",
         body: newUser,
       }),
+      invalidatesTags: ["Users"],
     }),
   }),
 });

@@ -16,22 +16,25 @@ import RecipePage from "./pages/RecipePage";
 
 import { store } from "./lib/store";
 import { Provider } from "react-redux";
+import { AuthProvider } from "./contexts/AuthContext";
 
 createRoot(document.getElementById("root")!).render(
   //<StrictMode>
-  <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/recipe/:id" element={<RecipePage />} />
-          <Route path="/add-recipes" element={<AddRecipePage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="/signIn" element={<SignInPage />} />
-          <Route path="/signUp" element={<SignUpPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </Provider>
+  <AuthProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/recipe/:id" element={<RecipePage />} />
+            <Route path="/add-recipes" element={<AddRecipePage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/signIn" element={<SignInPage />} />
+            <Route path="/signUp" element={<SignUpPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+  </AuthProvider>
   //</StrictMode>
 );
