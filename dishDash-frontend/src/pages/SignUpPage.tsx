@@ -1,5 +1,3 @@
-"use client";
-
 import type React from "react";
 import { useState } from "react";
 import { Link } from "react-router";
@@ -15,6 +13,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
+import { useNavigate } from "react-router";
+import { useCreateUsersMutation, useGetUsersQuery } from "@/lib/api";
 
 export default function SignUpPage() {
   const [name, setName] = useState("");
@@ -23,10 +23,37 @@ export default function SignUpPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const { data: users = [] } = useGetUsersQuery();
+  const [createUser] = useCreateUsersMutation();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Sign up with:", { name, email, password, confirmPassword });
+
+    if (users.some((u) => u.name === name)) {
+      setError("Name already registered");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    if (users.some((u) => u.email === email)) {
+      setError("Email already registered");
+      return;
+    }
+
+    try {
+      await createUser({ name, email, password }).unwrap();
+      alert("Registration successful! Please sign in.");
+      navigate("/signin");
+    } catch (err) {
+      setError("Registration failed. Please try again.");
+    }
   };
 
   return (

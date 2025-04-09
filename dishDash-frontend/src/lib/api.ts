@@ -38,7 +38,10 @@ export const Api = createApi({
       query: () => "users",
       providesTags: ["Users"],
     }),
-    createUsers: builder.mutation<any, { email: string; password: string }>({
+    createUsers: builder.mutation<
+      any,
+      { name: string; email: string; password: string }
+    >({
       query: (newUser) => ({
         url: "users",
         method: "POST",
