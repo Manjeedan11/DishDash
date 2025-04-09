@@ -9,6 +9,9 @@ export const Api = createApi({
     getRecipes: builder.query<any[], void>({
       query: () => "recipes",
     }),
+    getRecipeById: builder.query<any, string>({
+      query: (id) => `recipes/${id}`,
+    }),
     createRecipes: builder.mutation<any, Partial<any>>({
       query: (newRecipe) => ({
         url: "recipes",
@@ -45,6 +48,7 @@ export const Api = createApi({
 
 export const {
   useGetRecipesQuery,
+  useGetRecipeByIdQuery,
   useCreateRecipesMutation,
   useUpdateRecipesMutation,
   useDeleteRecipesMutation,

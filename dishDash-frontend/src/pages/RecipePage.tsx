@@ -29,42 +29,20 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useParams } from "react-router";
+import { useGetRecipeByIdQuery } from "@/lib/api";
 
 export default function RecipePage() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
+  const { data: recipe, isLoading, isError } = useGetRecipeByIdQuery(id || "");
   const navigate = useNavigate();
   const [isOwner] = useState(true);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
-  // Mock data for a recipe
-  const recipe = {
-    id: id,
-    title: "Creamy Garlic Pasta",
-    description:
-      "A delicious and creamy pasta dish with a rich garlic sauce that's perfect for a quick weeknight dinner.",
-    cookingTime: 25,
-    difficulty: "Medium",
-    servings: 4,
-    image:
-      "https://www.allrecipes.com/thmb/QiGptPjQB5mqSXGVxE4sLPMJs_4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-269500-creamy-garlic-pasta-Beauties-2x1-bcd9cb83138849e4b17104a1cd51d063.jpg",
-    ingredients: [
-      "8 oz pasta of your choice",
-      "4 cloves garlic, minced",
-      "2 tbsp butter",
-      "1 cup heavy cream",
-      "1/2 cup grated parmesan cheese",
-      "Salt and pepper to taste",
-      "Fresh parsley for garnish",
-    ],
-    instructions: [
-      "Bring a large pot of salted water to a boil. Add pasta and cook according to package instructions until al dente.",
-      "While pasta is cooking, melt butter in a large skillet over medium heat. Add minced garlic and sauté for 1-2 minutes until fragrant.",
-      "Pour in the heavy cream and bring to a simmer. Cook for 3-4 minutes until it starts to thicken slightly.",
-      "Stir in the parmesan cheese until melted and smooth. Season with salt and pepper to taste.",
-      "Drain the pasta, reserving 1/4 cup of pasta water. Add the pasta to the sauce, tossing to coat. If needed, add some reserved pasta water to thin the sauce.",
-      "Garnish with fresh parsley and additional parmesan cheese if desired. Serve immediately.",
-    ],
-  };
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error loading recipe</div>;
+  if (!recipe) return <div>Recipe not found</div>;
+
+  const totalTime = recipe.prepTime + recipe.cookTime;
 
   const handleDelete = () => {
     // In a real app, you would call an API to delete the recipe
@@ -74,18 +52,13 @@ export default function RecipePage() {
     navigate("/");
   };
 
-  const handleFavorite = () => {
-    // Handle adding to favorites
-    console.log("Recipe added to favorites");
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center py-8">
       <div className="container max-w-4xl w-full">
         <Card className="overflow-hidden border-none shadow-lg">
           <div className="relative h-[300px] md:h-[400px]">
             <img
-              src={recipe.image || "/placeholder.svg"}
+              src={recipe.image}
               alt={recipe.title}
               className="object-cover w-full h-full"
             />
@@ -99,7 +72,7 @@ export default function RecipePage() {
                   className="flex items-center gap-1 px-3 py-1 text-sm"
                 >
                   <Clock className="h-4 w-4" />
-                  <span>{recipe.cookingTime} min</span>
+                  <span>{totalTime} min</span>
                 </Badge>
                 <Badge
                   variant="outline"
@@ -194,14 +167,16 @@ export default function RecipePage() {
                 <h2 className="text-xl font-semibold mb-4">Details</h2>
                 <div className="space-y-2 text-sm">
                   <p>
-                    <span className="font-medium">Prep Time:</span> 10 minutes
+                    <span className="font-medium">Prep Time:</span>{" "}
+                    {recipe.prepTime} mins
                   </p>
                   <p>
-                    <span className="font-medium">Cook Time:</span> 15 minutes
+                    <span className="font-medium">Cook Time:</span>{" "}
+                    {recipe.cookTime} mins
                   </p>
                   <p>
-                    <span className="font-medium">Total Time:</span>{" "}
-                    {recipe.cookingTime} minutes
+                    <span className="font-medium">Total Time:</span> {totalTime}{" "}
+                    mins
                   </p>
                   <p>
                     <span className="font-medium">Servings:</span>{" "}

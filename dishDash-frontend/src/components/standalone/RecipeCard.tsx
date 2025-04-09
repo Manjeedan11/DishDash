@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 interface Recipe {
   id: string;
   title: string;
+  prepTime: number;
   cookTime: number;
   rating: number;
   image: string;
@@ -15,6 +16,8 @@ interface Recipe {
 interface RecipeCardProps {
   recipe: Recipe;
 }
+
+const totalTime = (recipe: Recipe) => recipe.prepTime + recipe.cookTime;
 
 export default function RecipeCard({ recipe }: RecipeCardProps) {
   return (
@@ -39,7 +42,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
             className="flex items-center gap-1 bg-orange-50"
           >
             <Clock className="h-3 w-3" />
-            <span>{recipe.cookTime} min</span>
+            <span>{totalTime(recipe)} min</span>
           </Badge>
         </div>
         <div className="flex items-center text-amber-500 mb-2">
