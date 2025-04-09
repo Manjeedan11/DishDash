@@ -62,6 +62,9 @@ const formSchema = z.object({
     .max(5, {
       message: "Rating cannot exceed 5.",
     }),
+  dietType: z.string().min(1, {
+    message: "Please select dietary preference.",
+  }),
 });
 
 export default function AddRecipePage() {
@@ -83,6 +86,7 @@ export default function AddRecipePage() {
       servings: 1,
       image: "",
       rating: 1,
+      dietType: "",
     },
   });
 
@@ -222,6 +226,54 @@ export default function AddRecipePage() {
                       </Select>
                       <FormDescription>
                         Choose the category that best fits your recipe
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="dietType"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Diet Labels</FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select Dietary Preference" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="all">
+                            No Dietary Preference
+                          </SelectItem>
+                          <SelectItem value="vegan">Vegan</SelectItem>
+                          <SelectItem value="vegetarian">Vegetarian</SelectItem>
+                          <SelectItem value="gluten-free">
+                            Gluten-Free
+                          </SelectItem>
+                          <SelectItem value="dairy-free">Dairy-Free</SelectItem>
+                          <SelectItem value="nut-free">Nut-Free</SelectItem>
+                          <SelectItem value="soy-free">Soy-Free</SelectItem>
+                          <SelectItem value="egg-free">Egg-Free</SelectItem>
+                          <SelectItem value="paleo">Paleo</SelectItem>
+                          <SelectItem value="keto">Keto</SelectItem>
+                          <SelectItem value="low-carb">Low Carb</SelectItem>
+                          <SelectItem value="halal">Halal</SelectItem>
+                          <SelectItem value="kosher">Kosher</SelectItem>
+                          <SelectItem value="sugar-free">Sugar-Free</SelectItem>
+                          <SelectItem value="low-sodium">Low Sodium</SelectItem>
+                          <SelectItem value="high-protein">
+                            High Protein
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormDescription>
+                        Select any dietary labels that apply to your recipe
                       </FormDescription>
                       <FormMessage />
                     </FormItem>

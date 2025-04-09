@@ -10,6 +10,7 @@
       "difficulty": "Medium",
       "servings": 4,
       "category": "main-course",
+      "dietType": "No Dietary Preference",
       "image": "https://supervalu.ie/image/var/files/real-food/recipes/Uploaded-2020/spaghetti-bolognese-recipe.jpg",
       "ingredients": [
         "1 lb ground beef",
@@ -41,6 +42,7 @@
       "difficulty": "Easy",
       "servings": 4,
       "category": "main-course",
+      "dietType": "vegan",
       "image": "https://cleangreensimple.com/wp-content/uploads/vegan-tacos-cauliflower.jpg",
       "ingredients": [
         "1 head cauliflower, chopped into florets",
@@ -72,6 +74,7 @@
       "servings": 4,
       "category": "breakfast",
       "image": "https://fortheloveofcooking.net/wp-content/uploads/2016/04/DSC_2476.1.jpg",
+      "dietType": "vegetarian",
       "ingredients": [
         "1 cup all-purpose flour",
         "2 tbsp sugar",
@@ -102,6 +105,7 @@
       "servings": 2,
       "category": "salad",
       "image": "https://www.slenderkitchen.com/sites/default/files/styles/gsd-16x9/public/recipe_images/grilled-chicken-Greek-salad.jpg",
+      "dietType": "gluten-free",
       "ingredients": [
         "2 boneless skinless chicken breasts",
         "1 tbsp olive oil",
@@ -131,6 +135,7 @@
       "servings": 4,
       "category": "main-course",
       "image": "https://recipe30.com/wp-content/uploads/2024/03/Beef-And-Broccoli-Stir-Fry.jpg",
+      "dietType": "dairy-free",
       "ingredients": [
         "1 lb beef sirloin, thinly sliced",
         "2 tbsp soy sauce",
@@ -165,6 +170,7 @@
       "servings": 4,
       "category": "dessert",
       "image": "https://www.bakingstherapy.com/wp-content/uploads/2022/01/DSC_7670-1.jpg",
+      "dietType": "vegetarian",
       "ingredients": [
         "4 oz semi-sweet chocolate",
         "1/2 cup unsalted butter",
@@ -225,6 +231,7 @@
       "servings": 2,
       "image": "https://www.perfectitaliano.com.au/content/dam/perfectitaliano-aus/recipe/0_desktop/Desktop-Margherita-Basil-Pesto-Pizza-Slice.jpg",
       "rating": 4.8,
+      "dietType": "vegetarian",
       "ingredients": [
         "1 pizza dough ball",
         "1/2 cup tomato sauce",
@@ -240,6 +247,44 @@
         "Spread tomato sauce over the dough, then top with cheese and tomato slices.",
         "Bake for 12-15 minutes until crust is golden.",
         "Top with fresh basil, drizzle with olive oil, and serve."
+      ]
+    },
+    {
+      "id": "30b0",
+      "title": "Spiced Coconut Lentil Curry",
+      "description": "A comforting Sri Lankan–South Indian style lentil curry made with red lentils, coconut milk, and fragrant spices. Perfect with rice or roti.",
+      "category": "main-course",
+      "prepTime": 10,
+      "cookTime": 25,
+      "difficulty": "Medium",
+      "servings": 4,
+      "image": "https://www.infolanka.com/recipes/mess3/3-161.jpg",
+      "rating": 4.8,
+      "dietType": "vegetarian",
+      "ingredients": [
+        "1 cup red lentils (masoor dal)",
+        "2 cups water",
+        "1 cup thick coconut milk",
+        "1 small onion, finely chopped",
+        "2 cloves garlic, minced",
+        "1-inch piece of ginger, grated",
+        "1 green chili, sliced",
+        "1/2 tsp turmeric powder",
+        "1 tsp mustard seeds",
+        "1/2 tsp cumin seeds",
+        "1/2 tsp red chili powder",
+        "1 sprig curry leaves",
+        "2 tbsp coconut oil",
+        "Salt to taste",
+        "Fresh coriander for garnish"
+      ],
+      "instructions": [
+        "Wash lentils thoroughly and add to a pot with water, turmeric, and a pinch of salt. Boil until soft (about 15–20 minutes).",
+        "In a separate pan, heat coconut oil and add mustard seeds. Once they start to pop, add cumin seeds, curry leaves, and green chili.",
+        "Add chopped onions, garlic, and ginger. Sauté until golden brown.",
+        "Stir in red chili powder, then pour in the cooked lentils. Mix well.",
+        "Add coconut milk and simmer for 5 minutes. Adjust salt to taste.",
+        "Garnish with fresh coriander and serve hot with rice, string hoppers, or roti."
       ]
     }
   ],
