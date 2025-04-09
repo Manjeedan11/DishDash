@@ -185,6 +185,12 @@
       "name": "John",
       "email": "johndoe@gmail.com",
       "password": "Johndoe@2025"
+    },
+    {
+      "id": "1505",
+      "name": "Manjeedan",
+      "email": "manjeedan@gmail.com",
+      "password": "manjeedan123"
     }
   ]
 }

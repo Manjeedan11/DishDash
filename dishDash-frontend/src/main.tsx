@@ -20,9 +20,10 @@ import { AuthProvider } from "./contexts/AuthContext";
 
 createRoot(document.getElementById("root")!).render(
   //<StrictMode>
-  <AuthProvider>
-    <Provider store={store}>
-      <BrowserRouter>
+
+  <Provider store={store}>
+    <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
@@ -33,8 +34,8 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/signUp" element={<SignUpPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </Provider>
-  </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
+  </Provider>
   //</StrictMode>
 );

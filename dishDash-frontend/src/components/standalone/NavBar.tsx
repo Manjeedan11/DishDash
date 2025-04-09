@@ -8,8 +8,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function NavBar() {
+  const { user, logout } = useAuth();
   const location = useLocation();
 
   const navLinks = [
@@ -64,12 +66,23 @@ export default function NavBar() {
             </div>
           </TooltipProvider>
 
-          <Button variant="ghost" asChild>
-            <Link to="/signin">Sign In</Link>
-          </Button>
-          <Button className="bg-orange-500 hover:bg-orange-600" asChild>
-            <Link to="/signup">Sign Up</Link>
-          </Button>
+          {user ? (
+            <Button
+              onClick={logout}
+              className="bg-orange-500 hover:bg-orange-600"
+            >
+              Logout
+            </Button>
+          ) : (
+            <>
+              <Button variant="ghost" asChild>
+                <Link to="/signIn">Sign In</Link>
+              </Button>
+              <Button className="bg-orange-500 hover:bg-orange-600" asChild>
+                <Link to="/signUp">Sign Up</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         <div className="md:hidden">
@@ -105,14 +118,6 @@ export default function NavBar() {
                     {link.name}
                   </Link>
                 ))}
-                <div className="pt-4 mt-4 border-t flex flex-col gap-2">
-                  <Button variant="ghost" asChild>
-                    <Link to="/signIn">Sign In</Link>
-                  </Button>
-                  <Button className="bg-orange-500 hover:bg-orange-600" asChild>
-                    <Link to="/signUp">Sign Up</Link>
-                  </Button>
-                </div>
               </div>
             </SheetContent>
           </Sheet>
