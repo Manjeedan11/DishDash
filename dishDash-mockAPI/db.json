@@ -183,6 +183,64 @@
         "Bake for 12-14 minutes until the edges are set but the center is soft.",
         "Let cool for 1 minute before inverting onto plates and serving."
       ]
+    },
+    {
+      "id": "8c4e",
+      "title": "Shrimp Scampi Pasta",
+      "description": "Garlicky shrimp tossed with spaghetti in a buttery lemon sauce.",
+      "category": "main-course",
+      "prepTime": 10,
+      "cookTime": 15,
+      "difficulty": "Medium",
+      "servings": 2,
+      "image": "https://assets-jpcust.jwpsrv.com/thumbnails/mCITeuJc-720.jpg",
+      "rating": 4.6,
+      "ingredients": [
+        "200g spaghetti",
+        "300g shrimp, peeled and deveined",
+        "3 cloves garlic, minced",
+        "2 tbsp butter",
+        "2 tbsp olive oil",
+        "1/4 tsp red pepper flakes",
+        "Juice of 1 lemon",
+        "2 tbsp chopped parsley",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Cook spaghetti according to package instructions.",
+        "Heat butter and olive oil in a pan. Add garlic and red pepper flakes, cook 1 minute.",
+        "Add shrimp and cook until pink, about 2 minutes per side.",
+        "Stir in lemon juice and cooked pasta. Toss to combine.",
+        "Garnish with parsley and serve immediately."
+      ]
+    },
+    {
+      "id": "9035",
+      "title": "Margarita Pizza",
+      "description": "A classic Italian pizza with fresh tomatoes, mozzarella, and basil",
+      "category": "main-course",
+      "prepTime": 20,
+      "cookTime": 15,
+      "difficulty": "Medium",
+      "servings": 2,
+      "image": "https://www.perfectitaliano.com.au/content/dam/perfectitaliano-aus/recipe/0_desktop/Desktop-Margherita-Basil-Pesto-Pizza-Slice.jpg",
+      "rating": 4.8,
+      "ingredients": [
+        "1 pizza dough ball",
+        "1/2 cup tomato sauce",
+        "150g fresh mozzarella, sliced",
+        "2 fresh tomatoes, sliced",
+        "Fresh basil leaves",
+        "1 tbsp olive oil",
+        "Salt to taste"
+      ],
+      "instructions": [
+        "Preheat oven to 475°F (245°C).",
+        "Roll out dough on a floured surface.",
+        "Spread tomato sauce over the dough, then top with cheese and tomato slices.",
+        "Bake for 12-15 minutes until crust is golden.",
+        "Top with fresh basil, drizzle with olive oil, and serve."
+      ]
     }
   ],
   "users": [

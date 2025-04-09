@@ -47,7 +47,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
         </div>
         <div className="flex items-center text-amber-500 mb-2">
           <Star className="h-4 w-4 fill-current" />
-          <span className="ml-1 text-sm">{recipe.rating.toFixed(1)}</span>
+          <span className="ml-1 text-sm">{recipe.rating}</span>
         </div>
       </CardContent>
 

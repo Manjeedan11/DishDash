@@ -54,6 +54,14 @@ const formSchema = z.object({
       message: "Please enter a valid URL.",
     })
     .optional(),
+  rating: z.coerce
+    .number()
+    .min(1, {
+      message: "Rating must be at least 1.",
+    })
+    .max(5, {
+      message: "Rating cannot exceed 5.",
+    }),
 });
 
 export default function AddRecipePage() {
@@ -74,6 +82,7 @@ export default function AddRecipePage() {
       difficulty: "",
       servings: 1,
       image: "",
+      rating: 1,
     },
   });
 
@@ -219,13 +228,13 @@ export default function AddRecipePage() {
                   )}
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                   <FormField
                     control={form.control}
                     name="prepTime"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Prep Time (minutes)</FormLabel>
+                        <FormLabel>Prep Time (mins)</FormLabel>
                         <FormControl>
                           <Input type="number" min="1" {...field} />
                         </FormControl>
@@ -239,7 +248,7 @@ export default function AddRecipePage() {
                     name="cookTime"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Cooking Time (minutes)</FormLabel>
+                        <FormLabel>Cooking Time (mins)</FormLabel>
                         <FormControl>
                           <Input type="number" min="1" {...field} />
                         </FormControl>
@@ -282,6 +291,20 @@ export default function AddRecipePage() {
                         <FormLabel>Servings</FormLabel>
                         <FormControl>
                           <Input type="number" min="1" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="rating"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Rating (1-5)</FormLabel>
+                        <FormControl>
+                          <Input type="number" placeholder="5" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
