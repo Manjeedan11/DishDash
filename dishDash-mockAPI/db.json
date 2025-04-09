@@ -182,6 +182,7 @@
   "users": [
     {
       "id": "1",
+      "name": "John",
       "email": "johndoe@gmail.com",
       "password": "Johndoe@2025"
     }
