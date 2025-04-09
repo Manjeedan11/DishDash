@@ -6,14 +6,14 @@ export default function RecipeFeed() {
   const { data: recipes, isLoading, isError } = useGetRecipesQuery();
 
   if (isLoading) {
-    return (
-      <div className="max-w-screen-xl mx-auto px-4 pb-16">
-        <div>Loading...</div>
-      </div>
-    );
+    return <div>Loading...</div>;
   }
 
-  if (isError || !recipes) {
+  if (isError) {
+    return <div>Error loading recipes</div>;
+  }
+
+  if (!recipes || recipes.length === 0) {
     return (
       <div className="max-w-screen-xl mx-auto px-4 pb-16">
         <EmptyState />
@@ -24,15 +24,9 @@ export default function RecipeFeed() {
   return (
     <div className="max-w-screen-xl mx-auto pt-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {recipes.length === 0 ? (
-          <div className="max-w-screen-xl mx-auto px-4 pb-16">
-            <EmptyState />
-          </div>
-        ) : (
-          recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))
-        )}
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))}
       </div>
     </div>
   );

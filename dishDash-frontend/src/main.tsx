@@ -14,19 +14,24 @@ import MainLayout from "./layouts/MainLayout";
 import { BrowserRouter, Route, Routes } from "react-router";
 import RecipePage from "./pages/RecipePage";
 
+import { store } from "./lib/store";
+import { Provider } from "react-redux";
+
 createRoot(document.getElementById("root")!).render(
   //<StrictMode>
-  <BrowserRouter>
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/recipe/:id" element={<RecipePage />} />
-        <Route path="/add-recipes" element={<AddRecipePage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/signIn" element={<SignInPage />} />
-        <Route path="/signUp" element={<SignUpPage />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/recipe/:id" element={<RecipePage />} />
+          <Route path="/add-recipes" element={<AddRecipePage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/signIn" element={<SignInPage />} />
+          <Route path="/signUp" element={<SignUpPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </Provider>
   //</StrictMode>
 );
