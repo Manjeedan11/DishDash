@@ -248,9 +248,6 @@ export default function AddRecipePage() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="all">
-                            No Dietary Preference
-                          </SelectItem>
                           <SelectItem value="vegan">Vegan</SelectItem>
                           <SelectItem value="vegetarian">Vegetarian</SelectItem>
                           <SelectItem value="gluten-free">

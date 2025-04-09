@@ -10,24 +10,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function SearchFilterBar() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [category, setCategory] = useState("all");
-  const [dietLabel, setDietLabel] = useState("no");
-
-  const handleSearch = () => {
-    console.log(
-      "Searching for:",
-      searchQuery,
-      "Category:",
-      category,
-      "Diet Label:",
-      dietLabel
-    );
-    // In a real app, you would implement the search functionality here
-    // For example: router.push(`/search?q=${searchQuery}&category=${category}&time=${cookingTime}`);
-  };
-
+export default function SearchFilterBar({
+  searchQuery,
+  setSearchQuery,
+  category,
+  setCategory,
+  dietLabel,
+  setDietLabel,
+}) {
   return (
     <div className="bg-white rounded-lg shadow-sm border p-4 mt-8 max-w-screen-xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 items-center">
@@ -37,23 +27,11 @@ export default function SearchFilterBar() {
             <Input
               type="text"
               placeholder="Search recipes or ingredients..."
-              className="pl-9 rounded-l-full pr-4 focus-visible:ring-orange-500"
+              className="pl-9 pr-4 focus-visible:ring-orange-500"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  handleSearch();
-                }
-              }}
+              onKeyDown={(e) => e.key === "Enter"}
             />
-            <Button
-              type="button"
-              onClick={handleSearch}
-              className="rounded-r-full bg-orange-500 hover:bg-orange-600"
-            >
-              <Search className="h-4 w-4" />
-              <span className="sr-only">Search</span>
-            </Button>
           </div>
         </div>
 
@@ -84,7 +62,7 @@ export default function SearchFilterBar() {
             <SelectValue placeholder="Dietary Preference" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="no">No Diet Preference</SelectItem>
+            <SelectItem value="no">Non Dietary</SelectItem>
             <SelectItem value="vegan">Vegan</SelectItem>
             <SelectItem value="vegetarian">Vegetarian</SelectItem>
             <SelectItem value="gluten-free">Gluten-Free</SelectItem>
