@@ -24,6 +24,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { ChevronLeft, Plus, X } from "lucide-react";
 import { Link } from "react-router";
+import { useCreateRecipesMutation } from "@/lib/api";
 
 const formSchema = z.object({
   title: z.string().min(3, {
@@ -35,7 +36,10 @@ const formSchema = z.object({
   category: z.string().min(1, {
     message: "Please select a category.",
   }),
-  cookingTime: z.coerce.number().min(1, {
+  prepTime: z.coerce.number().min(1, {
+    message: "Prep time must be at least 1 minute.",
+  }),
+  cookTime: z.coerce.number().min(1, {
     message: "Cooking time must be at least 1 minute.",
   }),
   difficulty: z.string().min(1, {
@@ -44,7 +48,7 @@ const formSchema = z.object({
   servings: z.coerce.number().min(1, {
     message: "At least 1 serving is required.",
   }),
-  imageUrl: z
+  image: z
     .string()
     .url({
       message: "Please enter a valid URL.",
@@ -57,6 +61,7 @@ export default function AddRecipePage() {
   const [newIngredient, setNewIngredient] = useState("");
   const [instructions, setInstructions] = useState<string[]>([]);
   const [newInstruction, setNewInstruction] = useState("");
+  const [createRecipe, { isLoading }] = useCreateRecipesMutation();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -64,28 +69,33 @@ export default function AddRecipePage() {
       title: "",
       description: "",
       category: "",
-      cookingTime: 0,
+      prepTime: 0,
+      cookTime: 0,
       difficulty: "",
       servings: 1,
-      imageUrl: "",
+      image: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Reset form after submission
-    form.reset();
-    setIngredients([]);
-    setInstructions([]);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const newRecipe = {
+        ...values,
+        ingredients,
+        instructions,
+      };
 
-    // Log form data (you can replace this with actual submission to backend)
-    console.log({
-      ...values,
-      ingredients,
-      instructions,
-    });
+      await createRecipe(newRecipe).unwrap();
 
-    // Show success message or redirect
-    alert("Recipe submitted successfully!");
+      form.reset();
+      setIngredients([]);
+      setInstructions([]);
+
+      alert("Recipe submitted successfully!");
+    } catch (error) {
+      console.error("Failed to save recipe:", error);
+      alert("Failed to save recipe. Please try again.");
+    }
   }
 
   const addIngredient = () => {
@@ -209,10 +219,24 @@ export default function AddRecipePage() {
                   )}
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <FormField
                     control={form.control}
-                    name="cookingTime"
+                    name="prepTime"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Prep Time (minutes)</FormLabel>
+                        <FormControl>
+                          <Input type="number" min="1" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="cookTime"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Cooking Time (minutes)</FormLabel>
@@ -267,7 +291,7 @@ export default function AddRecipePage() {
 
                 <FormField
                   control={form.control}
-                  name="imageUrl"
+                  name="image"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Image URL</FormLabel>
@@ -284,7 +308,6 @@ export default function AddRecipePage() {
                     </FormItem>
                   )}
                 />
-
                 <div>
                   <div className="text-sm font-medium mb-2">Ingredients</div>
                   <div className="flex items-center gap-2 mb-2">
