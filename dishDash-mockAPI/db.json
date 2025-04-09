@@ -2,30 +2,180 @@
   "recipes": [
     {
       "id": "1",
-      "title": "Creamy Garlic Pasta",
-      "description": "A delicious and creamy pasta dish with a rich garlic sauce that that's perfect for a quick weeknight dinner.",
-      "rating": 4,
+      "title": "Spaghetti Bolognese",
+      "description": "A rich and savory Italian pasta dish made with ground beef, tomatoes, and herbs.",
+      "rating": 4.5,
+      "prepTime": 10,
+      "cookTime": 30,
+      "difficulty": "Medium",
+      "servings": 4,
+      "image": "https://supervalu.ie/image/var/files/real-food/recipes/Uploaded-2020/spaghetti-bolognese-recipe.jpg",
+      "ingredients": [
+        "1 lb ground beef",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "1 can crushed tomatoes",
+        "1 tbsp tomato paste",
+        "1/2 cup red wine (optional)",
+        "1 tsp dried oregano",
+        "1 tsp dried basil",
+        "1 lb spaghetti",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "In a large skillet, cook ground beef over medium heat until browned. Remove excess fat.",
+        "Add chopped onions and minced garlic, sauté until softened.",
+        "Stir in crushed tomatoes, tomato paste, red wine, oregano, and basil. Simmer for 20-25 minutes.",
+        "Meanwhile, cook spaghetti according to package instructions. Drain.",
+        "Toss the cooked spaghetti with the Bolognese sauce. Serve with grated Parmesan cheese."
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Vegan Tacos",
+      "description": "A fresh and flavorful vegan taco dish with spiced cauliflower, topped with avocado and salsa.",
+      "rating": 4.8,
+      "prepTime": 10,
+      "cookTime": 20,
+      "difficulty": "Easy",
+      "servings": 4,
+      "image": "https://cleangreensimple.com/wp-content/uploads/vegan-tacos-cauliflower.jpg",
+      "ingredients": [
+        "1 head cauliflower, chopped into florets",
+        "2 tbsp olive oil",
+        "1 tsp chili powder",
+        "1 tsp cumin",
+        "1/2 tsp paprika",
+        "8 small taco shells",
+        "1 avocado, sliced",
+        "1/4 cup fresh cilantro, chopped",
+        "1/2 cup salsa",
+        "Lime wedges for garnish"
+      ],
+      "instructions": [
+        "Preheat oven to 400°F (200°C). Toss cauliflower florets in olive oil, chili powder, cumin, and paprika.",
+        "Spread cauliflower on a baking sheet and roast for 20 minutes, flipping halfway.",
+        "Warm taco shells in the oven for 5 minutes.",
+        "Assemble tacos by adding roasted cauliflower, sliced avocado, cilantro, and salsa. Garnish with lime wedges."
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Classic Pancakes",
+      "description": "Fluffy and soft pancakes, perfect for a leisurely breakfast or brunch.",
+      "rating": 4.2,
+      "prepTime": 5,
+      "cookTime": 10,
+      "difficulty": "Easy",
+      "servings": 4,
+      "image": "https://fortheloveofcooking.net/wp-content/uploads/2016/04/DSC_2476.1.jpg",
+      "ingredients": [
+        "1 cup all-purpose flour",
+        "2 tbsp sugar",
+        "1 tbsp baking powder",
+        "1/2 tsp salt",
+        "1 cup milk",
+        "1 egg",
+        "2 tbsp melted butter",
+        "1 tsp vanilla extract",
+        "Butter or oil for cooking"
+      ],
+      "instructions": [
+        "In a bowl, whisk together flour, sugar, baking powder, and salt.",
+        "In another bowl, combine milk, egg, melted butter, and vanilla extract.",
+        "Add the wet ingredients to the dry ingredients and stir until just combined. The batter should be lumpy.",
+        "Heat a skillet over medium heat and lightly grease with butter or oil.",
+        "Pour about 1/4 cup of batter onto the skillet for each pancake. Cook for 2-3 minutes until bubbles form on the surface, then flip and cook for another 1-2 minutes."
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Grilled Chicken Salad",
+      "description": "A healthy salad with grilled chicken, mixed greens, and a tangy vinaigrette.",
+      "rating": 4.6,
+      "prepTime": 10,
+      "cookTime": 15,
+      "difficulty": "Easy",
+      "servings": 2,
+      "image": "https://www.slenderkitchen.com/sites/default/files/styles/gsd-16x9/public/recipe_images/grilled-chicken-Greek-salad.jpg",
+      "ingredients": [
+        "2 boneless skinless chicken breasts",
+        "1 tbsp olive oil",
+        "Salt and pepper to taste",
+        "4 cups mixed greens",
+        "1 cucumber, sliced",
+        "1/4 red onion, thinly sliced",
+        "1/4 cup feta cheese, crumbled",
+        "1/4 cup balsamic vinaigrette dressing"
+      ],
+      "instructions": [
+        "Preheat grill or grill pan over medium heat. Season chicken breasts with olive oil, salt, and pepper.",
+        "Grill chicken for 6-7 minutes per side until fully cooked.",
+        "Slice the grilled chicken into strips.",
+        "In a large bowl, toss the mixed greens, cucumber, onion, and feta cheese.",
+        "Top the salad with sliced chicken and drizzle with balsamic vinaigrette dressing."
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Beef Stir Fry",
+      "description": "A quick stir fry with tender beef strips, vegetables, and a savory sauce.",
+      "rating": 4.4,
       "prepTime": 10,
       "cookTime": 15,
       "difficulty": "Medium",
       "servings": 4,
-      "image": "https://ik.imagekit.io/f10phwyh5/dishDash-recipeSharing-project/creamyGarlicPasta.jpg?updatedAt=1744033490947",
+      "image": "https://recipe30.com/wp-content/uploads/2024/03/Beef-And-Broccoli-Stir-Fry.jpg",
       "ingredients": [
-        "8 oz pasta of your choice",
-        "4 cloves garlic, minced",
-        "2 tbsp butter",
-        "1 cup heavy cream",
-        "1/2 cup grated parmesan cheese",
-        "Salt and pepper to taste",
-        "Fresh parsley for garnish"
+        "1 lb beef sirloin, thinly sliced",
+        "2 tbsp soy sauce",
+        "1 tbsp oyster sauce",
+        "1 tbsp hoisin sauce",
+        "1 tbsp sesame oil",
+        "1 tsp ginger, minced",
+        "1 garlic clove, minced",
+        "1/2 cup broccoli florets",
+        "1/2 bell pepper, sliced",
+        "1/2 onion, sliced",
+        "1 tbsp cornstarch",
+        "2 tbsp water"
       ],
       "instructions": [
-        "Bring a large pot of salted water to a boil. Add pasta and cook according to package instructions until Al Dente.",
-        "While pasta is cooking, melt butter in a large skillet over medium heat. Add minced garlic and sauté for 1-2 minutes until fragrant.",
-        "Pour in the heavy cream and bring to a simmer. Cook for 3-4 minutes until it starts to thicken slightly.",
-        "Stir in the parmesan cheese until melted and smooth. Season with salt and pepper to taste.",
-        "Drain the pasta, reserving 1/4 cup of pasta water. Add the pasta to the sauce, tossing to coat. If needed, add some reserved pasta water to thin the sauce.",
-        "Garnish with fresh parsley and additional parmesan cheese if desired. Serve immediately."
+        "In a bowl, combine soy sauce, oyster sauce, hoisin sauce, sesame oil, ginger, and garlic.",
+        "Toss the beef strips in the sauce and let marinate for 10 minutes.",
+        "Heat a wok or skillet over high heat and add a little oil.",
+        "Stir fry the beef for 2-3 minutes until browned and cooked through. Remove from the pan.",
+        "In the same pan, stir fry the broccoli, bell pepper, and onion for 3-4 minutes.",
+        "Return the beef to the pan and add the cornstarch and water mixture. Stir until the sauce thickens and the beef is coated."
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Chocolate Lava Cake",
+      "description": "A rich, decadent dessert with a molten chocolate center.",
+      "rating": 4.9,
+      "prepTime": 15,
+      "cookTime": 20,
+      "difficulty": "Hard",
+      "servings": 4,
+      "image": "https://www.bakingstherapy.com/wp-content/uploads/2022/01/DSC_7670-1.jpg",
+      "ingredients": [
+        "4 oz semi-sweet chocolate",
+        "1/2 cup unsalted butter",
+        "2/3 cup powdered sugar",
+        "2 eggs",
+        "2 egg yolks",
+        "1 tsp vanilla extract",
+        "1/4 cup all-purpose flour",
+        "Pinch of salt"
+      ],
+      "instructions": [
+        "Preheat the oven to 425°F (220°C). Grease four ramekins with butter and lightly dust with flour.",
+        "Melt chocolate and butter together in a heatproof bowl over simmering water.",
+        "Whisk together powdered sugar, eggs, egg yolks, and vanilla extract until smooth.",
+        "Stir in the melted chocolate mixture and flour. Divide the batter evenly between the ramekins.",
+        "Bake for 12-14 minutes until the edges are set but the center is soft.",
+        "Let cool for 1 minute before inverting onto plates and serving."
       ]
     }
   ],

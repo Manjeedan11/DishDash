@@ -1,20 +1,19 @@
+import { useGetRecipesQuery } from "@/lib/api";
 import EmptyState from "./EmptyState";
 import RecipeCard from "./RecipeCard";
 
-interface Recipe {
-  id: string;
-  title: string;
-  cookingTime: number;
-  rating: number;
-  image: string;
-}
+export default function RecipeFeed() {
+  const { data: recipes, isLoading, isError } = useGetRecipesQuery();
 
-interface RecipeFeedProps {
-  recipes: Recipe[];
-}
+  if (isLoading) {
+    return (
+      <div className="max-w-screen-xl mx-auto px-4 pb-16">
+        <div>Loading...</div>
+      </div>
+    );
+  }
 
-export default function RecipeFeed({ recipes }: RecipeFeedProps) {
-  if (recipes.length === 0) {
+  if (isError || !recipes) {
     return (
       <div className="max-w-screen-xl mx-auto px-4 pb-16">
         <EmptyState />
@@ -25,9 +24,15 @@ export default function RecipeFeed({ recipes }: RecipeFeedProps) {
   return (
     <div className="max-w-screen-xl mx-auto pt-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
+        {recipes.length === 0 ? (
+          <div className="max-w-screen-xl mx-auto px-4 pb-16">
+            <EmptyState />
+          </div>
+        ) : (
+          recipes.map((recipe) => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ))
+        )}
       </div>
     </div>
   );
