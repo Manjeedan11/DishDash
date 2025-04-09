@@ -1,27 +1,20 @@
-import { Link } from "react-router";
+// components/FavoriteCard.tsx
 import { Clock, Star, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Recipe } from "@/components/standalone/RecipeCard";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 import { toggleFavorite } from "@/lib/features/favoriteSlice";
+import { Link } from "react-router";
 
-export interface Recipe {
-  id: string;
-  title: string;
-  prepTime: number;
-  cookTime: number;
-  rating: number;
-  image: string;
-}
-
-interface RecipeCardProps {
+interface FavoriteCardProps {
   recipe: Recipe;
 }
 
 const totalTime = (recipe: Recipe) => recipe.prepTime + recipe.cookTime;
 
-export default function RecipeCard({ recipe }: RecipeCardProps) {
+export default function FavoriteCard({ recipe }: FavoriteCardProps) {
   const dispatch = useAppDispatch();
   const favorites = useAppSelector((state) => state.favorite.favorites);
   const isFavorite = favorites.some((fav) => fav.id === recipe.id);

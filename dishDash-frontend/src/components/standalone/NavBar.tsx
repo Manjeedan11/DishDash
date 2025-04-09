@@ -9,10 +9,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useAuth } from "@/contexts/AuthContext";
+import { useAppSelector } from "@/hooks/reduxHooks";
 
 export default function NavBar() {
   const { user, logout } = useAuth();
   const location = useLocation();
+  const favorites = useAppSelector((state) => state.favorite.favorites);
 
   const navLinks = [
     { name: "Add Recipe", href: "/add-recipes", icon: CookingPot },
@@ -45,24 +47,42 @@ export default function NavBar() {
         <div className="hidden md:flex items-center gap-4">
           <TooltipProvider>
             <div className="flex items-center gap-4">
-              {navLinks.map((link) => (
-                <Tooltip key={link.name}>
-                  <TooltipTrigger asChild>
-                    <Link
-                      to={link.href}
-                      className={`flex h-9 w-9 items-center justify-center rounded-full border transition-colors ${
-                        location.pathname === link.href
-                          ? "border-orange-500 text-orange-500"
-                          : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
-                      }`}
-                    >
-                      <link.icon className="h-5 w-5" />
-                      <span className="sr-only">{link.name}</span>
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>{link.name}</TooltipContent>
-                </Tooltip>
-              ))}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="/add-recipes"
+                    className={`flex h-9 w-9 items-center justify-center rounded-full border transition-colors ${
+                      location.pathname === "/add-recipes"
+                        ? "border-orange-500 text-orange-500"
+                        : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
+                    }`}
+                  >
+                    <CookingPot className="h-5 w-5" />
+                    <span className="sr-only">Add Recipe</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>Add Recipe</TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="/favorites"
+                    className={`flex h-9 w-9 items-center justify-center rounded-full border transition-colors ${
+                      location.pathname === "/favorites"
+                        ? "border-orange-500 text-orange-500"
+                        : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
+                    }`}
+                  >
+                    <div className="flex items-center gap-1">
+                      <Heart className="h-5 w-5" />
+                      <p className="text-lg">{favorites.length}</p>
+                    </div>
+                    <span className="sr-only">Favorites</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>Favorites</TooltipContent>
+              </Tooltip>
             </div>
           </TooltipProvider>
 

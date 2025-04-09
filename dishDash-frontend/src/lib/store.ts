@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import favoriteReducer from "@/lib/features/favoriteSlice";
 import { Api } from "./api";
 
 export const store = configureStore({
   reducer: {
+    favorite: favoriteReducer,
     [Api.reducerPath]: Api.reducer,
   },
   middleware: (getDefaultMiddleware) =>
