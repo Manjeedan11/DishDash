@@ -145,17 +145,19 @@ export default function RecipePage() {
               <div>
                 <h2 className="text-xl font-semibold mb-4">Ingredients</h2>
                 <ul className="space-y-2">
-                  {recipe.ingredients?.map((ingredient, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <Checkbox id={`ingredient-${index}`} />
-                      <label
-                        htmlFor={`ingredient-${index}`}
-                        className="text-sm leading-relaxed cursor-pointer"
-                      >
-                        {ingredient}
-                      </label>
-                    </li>
-                  ))}
+                  {recipe.ingredients?.map(
+                    (ingredient: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <Checkbox id={`ingredient-${index}`} />
+                        <label
+                          htmlFor={`ingredient-${index}`}
+                          className="text-sm leading-relaxed cursor-pointer"
+                        >
+                          {ingredient}
+                        </label>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
 
@@ -185,14 +187,16 @@ export default function RecipePage() {
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Instructions</h2>
               <ol className="space-y-4">
-                {recipe.instructions?.map((instruction, index) => (
-                  <li key={index} className="pl-6 relative">
-                    <span className="absolute left-0 top-0 flex items-center justify-center w-5 h-5 rounded-full bg-orange-100 text-orange-600 text-xs font-medium">
-                      {index + 1}
-                    </span>
-                    <p className="text-sm leading-relaxed">{instruction}</p>
-                  </li>
-                ))}
+                {recipe.instructions?.map(
+                  (instruction: string, index: number) => (
+                    <li key={index} className="pl-6 relative">
+                      <span className="absolute left-0 top-0 flex items-center justify-center w-5 h-5 rounded-full bg-orange-100 text-orange-600 text-xs font-medium">
+                        {index + 1}
+                      </span>
+                      <p className="text-sm leading-relaxed">{instruction}</p>
+                    </li>
+                  )
+                )}
               </ol>
             </div>
           </CardContent>

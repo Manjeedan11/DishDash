@@ -30,7 +30,7 @@ export default function RecipeFeed({
       .every(
         (term) =>
           recipe.title.toLowerCase().includes(term) ||
-          recipe.ingredients.some((ingredient) =>
+          recipe.ingredients.some((ingredient: string) =>
             ingredient.toLowerCase().includes(term)
           )
       );
