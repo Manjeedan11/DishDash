@@ -71,15 +71,14 @@ cd dishDash-mockAPI
 npm run server
 ```
 
-## Why React 18 and Tailwind CSS 3.4.17 ?
+## Why React 18 and Tailwind CSS 3.4.17?
 
 - **React 18:**  
-  While React 19 introduces several new features and performance improvements, it is still in the experimental phase. Using React 18 ensures stability and avoids potential issues that may arise from using a newer, less tested version.
+  React 19 is still experimental. React 18 offers stable, production-ready features without the risk of breaking changes.
 
 - **Tailwind CSS 3.4.17:**  
-  Tailwind CSS 4 is currently in the canary release, and using it might require flags like `--force` or `--legacy-peer-deps`, which can lead to dependency conflicts and other issues. Tailwind CSS 3.4.17 is stable and widely used, ensuring a smooth development experience.
+  Tailwind 4 is in canary release and may cause dependency issues. Version 3.4.17 is stable and widely supported.
 
----
-
+--
 
 
