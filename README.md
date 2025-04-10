@@ -6,7 +6,6 @@ DishDash is a recipe sharing platform built using React 18 and Tailwind CSS 3.4.
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
