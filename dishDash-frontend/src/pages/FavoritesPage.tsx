@@ -1,4 +1,3 @@
-// pages/FavoritesPage.tsx
 import { useAppSelector } from "@/hooks/reduxHooks";
 import FavoriteCard from "@/components/standalone/FavoriteCard";
 

@@ -1,6 +1,5 @@
-// features/favoriteSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Recipe } from "@/components/standalone/RecipeCard"; // Define Recipe type based on your data structure
+import { Recipe } from "@/components/standalone/RecipeCard";
 
 interface FavoriteState {
   favorites: Recipe[];

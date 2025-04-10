@@ -15,6 +15,7 @@ import {
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useCreateUsersMutation, useGetUsersQuery } from "@/lib/api";
+import { toast } from "sonner";
 
 export default function SignUpPage() {
   const [name, setName] = useState("");
@@ -33,26 +34,26 @@ export default function SignUpPage() {
     e.preventDefault();
 
     if (users.some((u) => u.name === name)) {
-      setError("Name already registered");
+      toast.error("Name already registered");
       return;
     }
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
 
     if (users.some((u) => u.email === email)) {
-      setError("Email already registered");
+      toast.error("Email already registered");
       return;
     }
 
     try {
       await createUser({ name, email, password }).unwrap();
-      alert("Registration successful! Please sign in.");
-      navigate("/signin");
+      toast.success("Registration successful ! Please sign in.");
+      navigate("/signIn");
     } catch (err) {
-      setError("Registration failed. Please try again.");
+      toast.error("Registration failed. Please try again.");
     }
   };
 

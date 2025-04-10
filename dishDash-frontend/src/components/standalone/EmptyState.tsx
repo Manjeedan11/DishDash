@@ -4,13 +4,6 @@ import { Button } from "@/components/ui/button";
 export default function EmptyState() {
   return (
     <div className="flex flex-col items-center justify-center py-12 text-center">
-      <div className="relative w-64 h-64 mb-6">
-        <img
-          src="/placeholder.svg"
-          alt="No recipes found"
-          className="w-full h-full object-contain"
-        />
-      </div>
       <h3 className="text-2xl font-semibold mb-2">
         No delicious results found!
       </h3>

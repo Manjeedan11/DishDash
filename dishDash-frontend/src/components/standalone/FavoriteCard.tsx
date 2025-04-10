@@ -7,6 +7,7 @@ import { Recipe } from "@/components/standalone/RecipeCard";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 import { toggleFavorite } from "@/lib/features/favoriteSlice";
 import { Link } from "react-router";
+import { toast } from "sonner";
 
 interface FavoriteCardProps {
   recipe: Recipe;
@@ -23,6 +24,8 @@ export default function FavoriteCard({ recipe }: FavoriteCardProps) {
     e.preventDefault();
     e.stopPropagation();
     dispatch(toggleFavorite(recipe));
+
+    toast.success(isFavorite ? "Removed from favorites" : "Added to favorites");
   };
 
   return (

@@ -16,6 +16,7 @@ import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useGetUsersQuery } from "@/lib/api";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router";
+import { toast } from "sonner";
 
 export default function SignInPage() {
   const [email, setEmail] = useState("");
@@ -37,7 +38,7 @@ export default function SignInPage() {
       login({ id: user.id, email: user.email });
       navigate("/");
     } else {
-      setError("Invalid email or password");
+      toast.error("Invalid email or password");
     }
   };
 

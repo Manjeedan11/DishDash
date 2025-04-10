@@ -26,6 +26,7 @@ import { ChevronLeft, Plus, X } from "lucide-react";
 import { Link } from "react-router";
 import { useCreateRecipesMutation } from "@/lib/api";
 import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   title: z.string().min(3, {
@@ -95,7 +96,7 @@ export default function AddRecipePage() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       if (!user) {
-        alert("You must be logged in to create a recipe!");
+        toast.error("You must be logged in to create a recipe!");
         return;
       }
 
@@ -112,10 +113,10 @@ export default function AddRecipePage() {
       setIngredients([]);
       setInstructions([]);
 
-      alert("Recipe submitted successfully!");
+      toast.success("Recipe submitted successfully !");
     } catch (error) {
       console.error("Failed to save recipe:", error);
-      alert("Failed to save recipe. Please try again.");
+      toast.error("Failed to save recipe. Please try again.");
     }
   }
 

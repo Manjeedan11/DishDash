@@ -13,14 +13,6 @@ export default function RecipeFeed({ searchQuery, category, dietLabel }) {
     return <div>Error loading recipes</div>;
   }
 
-  if (!recipes || recipes.length === 0) {
-    return (
-      <div className="max-w-screen-xl mx-auto px-4 pb-16">
-        <EmptyState />
-      </div>
-    );
-  }
-
   const filteredRecipes = recipes?.filter((recipe) => {
     const matchesSearch = searchQuery
       .toLowerCase()
@@ -39,13 +31,20 @@ export default function RecipeFeed({ searchQuery, category, dietLabel }) {
     return matchesSearch && matchesCategory && matchesDiet;
   });
 
+  const noResultsAfterSearch =
+    searchQuery.trim() !== "" && filteredRecipes?.length === 0;
+
   return (
-    <div className="max-w-screen-xl mx-auto pt-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredRecipes?.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
-      </div>
+    <div className="max-w-screen-xl mx-auto pt-10 pb-16">
+      {noResultsAfterSearch ? (
+        <EmptyState />
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredRecipes?.map((recipe) => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

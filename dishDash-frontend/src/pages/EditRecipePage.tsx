@@ -25,6 +25,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { ChevronLeft, Plus, X } from "lucide-react";
 import { useGetRecipeByIdQuery, useUpdateRecipesMutation } from "@/lib/api";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   title: z.string().min(3, {
@@ -112,10 +113,11 @@ export default function EditRecipePage() {
       };
 
       await updateRecipe({ id: id || "", data: updatedRecipe }).unwrap();
+      toast.success("Recipe updated successfully !");
       navigate(`/recipe/${id}`);
     } catch (error) {
       console.error("Failed to update recipe:", error);
-      alert("Failed to update recipe. Please try again.");
+      toast.error("Failed to update recipe. Please try again.");
     }
   };
 

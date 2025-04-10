@@ -12,7 +12,7 @@
       "image": "https://getinspiredeveryday.com/wp-content/uploads/2024/01/Creamy-Garlic-Chicken-Get-Inspired-Everyday-2.jpg",
       "rating": 4.8,
       "dietType": "gluten-free",
-      "userId": "1",
+      "userId": "1505",
       "ingredients": [
         "4 boneless chicken breasts",
         "2 tbsp olive oil",
@@ -38,16 +38,10 @@
   ],
   "users": [
     {
-      "id": "1",
-      "name": "John",
-      "email": "johndoe@gmail.com",
-      "password": "Johndoe@2025"
-    },
-    {
       "id": "1505",
-      "name": "Manjeedan",
-      "email": "manjeedan@gmail.com",
-      "password": "manjeedan123"
+      "name": "John",
+      "email": "john@gmail.com",
+      "password": "John@2025"
     }
   ]
 }

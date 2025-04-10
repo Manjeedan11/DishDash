@@ -5,6 +5,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 import { toggleFavorite } from "@/lib/features/favoriteSlice";
+import { toast } from "sonner";
 
 export interface Recipe {
   id: string;
@@ -38,6 +39,8 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
     e.preventDefault();
     e.stopPropagation();
     dispatch(toggleFavorite(recipe));
+
+    toast.success(isFavorite ? "Removed from favorites" : "Added to favorites");
   };
 
   return (

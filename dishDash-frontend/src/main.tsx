@@ -12,6 +12,7 @@ import SignUpPage from "./pages/SignUpPage";
 import EditRecipePage from "./pages/EditRecipePAge";
 import MainLayout from "./layouts/MainLayout";
 import { ProtectedLayout } from "./layouts/ProtectedLayout";
+import RootLayout from "./layouts/RootLayout";
 
 import { BrowserRouter, Route, Routes } from "react-router";
 import RecipePage from "./pages/RecipePage";
@@ -26,16 +27,18 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/recipe/:id" element={<RecipePage />} />
-            <Route path="/signIn" element={<SignInPage />} />
-            <Route path="/signUp" element={<SignUpPage />} />
+          <Route element={<RootLayout />}>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/recipe/:id" element={<RecipePage />} />
+              <Route path="/signIn" element={<SignInPage />} />
+              <Route path="/signUp" element={<SignUpPage />} />
 
-            <Route element={<ProtectedLayout />}>
-              <Route path="/add-recipes" element={<AddRecipePage />} />
-              <Route path="/recipe/:id/edit" element={<EditRecipePage />} />
-              <Route path="/favorites" element={<FavoritesPage />} />
+              <Route element={<ProtectedLayout />}>
+                <Route path="/add-recipes" element={<AddRecipePage />} />
+                <Route path="/recipe/:id/edit" element={<EditRecipePage />} />
+                <Route path="/favorites" element={<FavoritesPage />} />
+              </Route>
             </Route>
           </Route>
         </Routes>
