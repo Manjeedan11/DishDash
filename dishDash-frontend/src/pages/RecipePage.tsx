@@ -30,10 +30,12 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useParams } from "react-router";
 import { useGetRecipeByIdQuery } from "@/lib/api";
+import { useDeleteRecipesMutation } from "@/lib/api";
 
 export default function RecipePage() {
   const { id } = useParams<{ id: string }>();
   const { data: recipe, isLoading, isError } = useGetRecipeByIdQuery(id || "");
+  const [deleteRecipe] = useDeleteRecipesMutation();
   const navigate = useNavigate();
   const [isOwner] = useState(true);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -44,10 +46,14 @@ export default function RecipePage() {
 
   const totalTime = recipe.prepTime + recipe.cookTime;
 
-  const handleDelete = () => {
-    console.log("Deleting recipe:", recipe.id);
-
-    navigate("/");
+  const handleDelete = async () => {
+    try {
+      await deleteRecipe(recipe.id).unwrap();
+      console.log("Recipe deleted successfully");
+      navigate("/");
+    } catch (error) {
+      console.error("Failed to delete recipe:", error);
+    }
   };
 
   return (
@@ -80,7 +86,6 @@ export default function RecipePage() {
                   <span>{recipe.difficulty}</span>
                 </Badge>
 
-                {/* Edit/Delete Options - Only visible to recipe owner */}
                 {isOwner && (
                   <div className="md:hidden">
                     <DropdownMenu>
@@ -115,7 +120,6 @@ export default function RecipePage() {
               </div>
             </div>
 
-            {/* Desktop Edit/Delete Buttons - Only visible to recipe owner */}
             {isOwner && (
               <div className="hidden md:flex items-center gap-2 mb-6">
                 <Button
@@ -198,7 +202,6 @@ export default function RecipePage() {
           </CardContent>
         </Card>
 
-        {/* Delete Confirmation Dialog */}
         <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
           <AlertDialogContent>
             <AlertDialogHeader>

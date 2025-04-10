@@ -5,10 +5,11 @@ export const Api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:5000/",
   }),
-  tagTypes: ["Users"],
+  tagTypes: ["Users", "Recipes"],
   endpoints: (builder) => ({
     getRecipes: builder.query<any[], void>({
       query: () => "recipes",
+      providesTags: ["Recipes"],
     }),
     getRecipeById: builder.query<any, string>({
       query: (id) => `recipes/${id}`,
@@ -32,6 +33,7 @@ export const Api = createApi({
         url: `recipes/${id}`,
         method: "DELETE",
       }),
+      invalidatesTags: ["Recipes"],
     }),
 
     getUsers: builder.query<any[], void>({
