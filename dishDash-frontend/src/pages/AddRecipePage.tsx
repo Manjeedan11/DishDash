@@ -25,6 +25,7 @@ import * as z from "zod";
 import { ChevronLeft, Plus, X } from "lucide-react";
 import { Link } from "react-router";
 import { useCreateRecipesMutation } from "@/lib/api";
+import { useAuth } from "@/contexts/AuthContext";
 
 const formSchema = z.object({
   title: z.string().min(3, {
@@ -73,6 +74,7 @@ export default function AddRecipePage() {
   const [instructions, setInstructions] = useState<string[]>([]);
   const [newInstruction, setNewInstruction] = useState("");
   const [createRecipe, { isLoading }] = useCreateRecipesMutation();
+  const { user } = useAuth();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -92,8 +94,14 @@ export default function AddRecipePage() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
+      if (!user) {
+        alert("You must be logged in to create a recipe!");
+        return;
+      }
+
       const newRecipe = {
         ...values,
+        userId: user.id,
         ingredients,
         instructions,
       };

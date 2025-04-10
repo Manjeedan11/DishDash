@@ -98,8 +98,8 @@ export default function EditRecipePage() {
         image: recipe.image,
         dietType: recipe.dietType || "",
       });
-      setIngredients(recipe.ingredients);
-      setInstructions(recipe.instructions);
+      setIngredients(recipe.ingredients || []);
+      setInstructions(recipe.instructions || []);
     }
   }, [recipe, form]);
 
@@ -442,7 +442,7 @@ export default function EditRecipePage() {
                     </Button>
                   </div>
                   <div className="space-y-2 mt-2">
-                    {instructions.map((instruction, index) => (
+                    {instructions?.map((instruction, index) => (
                       <div
                         key={index}
                         className="flex items-center justify-between bg-muted/50 rounded-md px-3 py-2"

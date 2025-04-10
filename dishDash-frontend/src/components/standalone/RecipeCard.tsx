@@ -8,11 +8,19 @@ import { toggleFavorite } from "@/lib/features/favoriteSlice";
 
 export interface Recipe {
   id: string;
+  userId: string;
   title: string;
+  description: string;
+  rating: number;
   prepTime: number;
   cookTime: number;
-  rating: number;
+  difficulty: string;
+  servings: number;
+  category: string;
   image: string;
+  dietType: string;
+  ingredients: string[];
+  instructions: string[];
 }
 
 interface RecipeCardProps {

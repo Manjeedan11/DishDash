@@ -1,13 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
-import {
-  Clock,
-  ChefHat,
-  Heart,
-  MoreVertical,
-  Pencil,
-  Trash,
-} from "lucide-react";
+import { useNavigate, useParams } from "react-router";
+import { Clock, ChefHat, MoreVertical, Pencil, Trash } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
@@ -28,17 +21,19 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { useParams } from "react-router";
 import { useGetRecipeByIdQuery } from "@/lib/api";
 import { useDeleteRecipesMutation } from "@/lib/api";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function RecipePage() {
   const { id } = useParams<{ id: string }>();
   const { data: recipe, isLoading, isError } = useGetRecipeByIdQuery(id || "");
   const [deleteRecipe] = useDeleteRecipesMutation();
   const navigate = useNavigate();
-  const [isOwner] = useState(true);
+  const { user } = useAuth();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+
+  const isOwner = !!user && user.id === recipe?.userId;
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error loading recipe</div>;
@@ -49,7 +44,6 @@ export default function RecipePage() {
   const handleDelete = async () => {
     try {
       await deleteRecipe(recipe.id).unwrap();
-      console.log("Recipe deleted successfully");
       navigate("/");
     } catch (error) {
       console.error("Failed to delete recipe:", error);
@@ -99,7 +93,9 @@ export default function RecipePage() {
                         <DropdownMenuItem asChild>
                           <Button
                             variant="link"
-                            onClick={() => navigate(`/recipe/:id/edit`)}
+                            onClick={() =>
+                              navigate(`/recipe/${recipe.id}/edit`)
+                            }
                             className="flex items-center gap-2"
                           >
                             <Pencil className="h-4 w-4" />
@@ -149,7 +145,7 @@ export default function RecipePage() {
               <div>
                 <h2 className="text-xl font-semibold mb-4">Ingredients</h2>
                 <ul className="space-y-2">
-                  {recipe.ingredients.map((ingredient, index) => (
+                  {recipe.ingredients?.map((ingredient, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <Checkbox id={`ingredient-${index}`} />
                       <label
@@ -189,7 +185,7 @@ export default function RecipePage() {
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Instructions</h2>
               <ol className="space-y-4">
-                {recipe.instructions.map((instruction, index) => (
+                {recipe.instructions?.map((instruction, index) => (
                   <li key={index} className="pl-6 relative">
                     <span className="absolute left-0 top-0 flex items-center justify-center w-5 h-5 rounded-full bg-orange-100 text-orange-600 text-xs font-medium">
                       {index + 1}
