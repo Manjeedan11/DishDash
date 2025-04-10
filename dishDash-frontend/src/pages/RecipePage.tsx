@@ -45,10 +45,8 @@ export default function RecipePage() {
   const totalTime = recipe.prepTime + recipe.cookTime;
 
   const handleDelete = () => {
-    // In a real app, you would call an API to delete the recipe
     console.log("Deleting recipe:", recipe.id);
 
-    // Navigate to home page
     navigate("/");
   };
 
@@ -96,9 +94,7 @@ export default function RecipePage() {
                         <DropdownMenuItem asChild>
                           <Button
                             variant="link"
-                            onClick={() =>
-                              navigate(`/recipe/${recipe.id}/edit`)
-                            }
+                            onClick={() => navigate(`/recipe/:id/edit`)}
                             className="flex items-center gap-2"
                           >
                             <Pencil className="h-4 w-4" />

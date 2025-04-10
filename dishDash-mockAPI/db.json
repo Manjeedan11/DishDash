@@ -1,17 +1,15 @@
 {
   "recipes": [
     {
-      "id": "1",
       "title": "Spaghetti Bolognese",
       "description": "A rich and savory Italian pasta dish made with ground beef, tomatoes, and herbs.",
-      "rating": 4.5,
+      "category": "main-course",
       "prepTime": 10,
       "cookTime": 30,
       "difficulty": "Medium",
       "servings": 4,
-      "category": "main-course",
-      "dietType": "No Dietary Preference",
       "image": "https://supervalu.ie/image/var/files/real-food/recipes/Uploaded-2020/spaghetti-bolognese-recipe.jpg",
+      "dietType": "vegan",
       "ingredients": [
         "1 lb ground beef",
         "1 onion, chopped",
@@ -28,9 +26,9 @@
         "In a large skillet, cook ground beef over medium heat until browned. Remove excess fat.",
         "Add chopped onions and minced garlic, sauté until softened.",
         "Stir in crushed tomatoes, tomato paste, red wine, oregano, and basil. Simmer for 20-25 minutes.",
-        "Meanwhile, cook spaghetti according to package instructions. Drain.",
-        "Toss the cooked spaghetti with the Bolognese sauce. Serve with grated Parmesan cheese."
-      ]
+        "Meanwhile, cook spaghetti according to package instructions. Drain."
+      ],
+      "id": "1"
     },
     {
       "id": "2",
