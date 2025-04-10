@@ -79,6 +79,6 @@ npm run server
 - **Tailwind CSS 3.4.17:**  
   Tailwind 4 is in canary release and may cause dependency issues. Version 3.4.17 is stable and widely supported.
 
---
+---
 
 
