@@ -9,7 +9,7 @@ import AddRecipePage from "./pages/AddRecipePage";
 import FavoritesPage from "./pages/FavoritesPage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
-import EditRecipePage from "./pages/EditRecipePAge";
+import EditRecipePage from "./pages/EditRecipePage";
 import MainLayout from "./layouts/MainLayout";
 import { ProtectedLayout } from "./layouts/ProtectedLayout";
 import RootLayout from "./layouts/RootLayout";
