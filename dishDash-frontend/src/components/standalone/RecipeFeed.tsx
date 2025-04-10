@@ -2,7 +2,17 @@ import { useGetRecipesQuery } from "@/lib/api";
 import EmptyState from "./EmptyState";
 import RecipeCard from "./RecipeCard";
 
-export default function RecipeFeed({ searchQuery, category, dietLabel }) {
+interface RecipeFeedProps {
+  searchQuery: string;
+  category: string;
+  dietLabel: string;
+}
+
+export default function RecipeFeed({
+  searchQuery,
+  category,
+  dietLabel,
+}: RecipeFeedProps) {
   const { data: recipes, isLoading, isError } = useGetRecipesQuery();
 
   if (isLoading) {

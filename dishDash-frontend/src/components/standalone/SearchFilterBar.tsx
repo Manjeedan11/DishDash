@@ -10,6 +10,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+interface SearchFilterBarProps {
+  searchQuery: string;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+  category: string;
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
+  dietLabel: string;
+  setDietLabel: React.Dispatch<React.SetStateAction<string>>;
+}
+
 export default function SearchFilterBar({
   searchQuery,
   setSearchQuery,
@@ -17,7 +26,7 @@ export default function SearchFilterBar({
   setCategory,
   dietLabel,
   setDietLabel,
-}) {
+}: SearchFilterBarProps) {
   return (
     <div className="bg-white rounded-lg shadow-sm border p-4 mt-8 max-w-screen-xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 items-center">
