@@ -73,10 +73,10 @@ npm run server
 ## Why React 18 and Tailwind CSS 3.4.17?
 
 - **React 18:**  
-  React 19 is still experimental. React 18 offers stable, production-ready features without the risk of breaking changes.
+  React 19 is still in the canary release, and using it may cause compatibility issues with `shadcn/ui`. React 18 ensures stability and avoids these risks.
 
 - **Tailwind CSS 3.4.17:**  
-  Tailwind 4 is in canary release and may cause dependency issues. Version 3.4.17 is stable and widely supported.
+  Tailwind v4 is in canary release and may lead to dependency issues with components of `shadcn/ui`. Version 3.4.17 is stable and avoids such conflicts.
 
 ---
 
