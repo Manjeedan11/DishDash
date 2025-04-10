@@ -70,7 +70,7 @@ cd dishDash-mockAPI
 npm run server
 ```
 
-## Why React 18 and Tailwind CSS 3.4.17?
+## Why React 18 and Tailwind CSS 3.4.17 ?
 
 - **React 18:**  
   React 19 is still in the canary release, and using it may cause compatibility issues with `shadcn/ui`. React 18 ensures stability and avoids these risks.
