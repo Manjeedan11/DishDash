@@ -45,7 +45,7 @@ DishDash is a recipe sharing platform built using React 18 and Tailwind CSS 3.4.
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/dishdash-frontend.git
+   git clone https://github.com/Manjeedan11/DishDash.git
    cd dishdash-frontend
    ```
 
