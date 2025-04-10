@@ -57,14 +57,14 @@ DishDash is a recipe sharing platform built using React 18 and Tailwind CSS 3.4.
 
 ## Running the Application
 
-### Start the backend (Mock API):
-
 ### Start the frontend:
 
 ```sh
 cd dishdash-frontend
 npm run dev
 ```
+
+### Start the backend (Mock API):
 
 ```sh
 cd dishDash-mockAPI
