@@ -34,6 +34,158 @@
         "Add spinach and let it wilt.",
         "Return the chicken to the pan and simmer for another 2-3 minutes until heated through and coated with sauce."
       ]
+    },
+    {
+      "id": "bc89",
+      "title": "Spicy Garlic Butter Ramen",
+      "description": "Quick and comforting ramen with a rich garlic-butter sauce, chili heat, and a jammy egg.",
+      "category": "lunch",
+      "prepTime": 10,
+      "cookTime": 10,
+      "difficulty": "Easy",
+      "servings": 1,
+      "image": "https://www.allrecipes.com/thmb/K0rliBG9KK5j3TCNxZgF5XoAY-s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/270770-garlic-noodles-ddmfs-4x3-0189-95ad30c68efd42e592a70ec82d24f0b9.jpg",
+      "rating": 4.6,
+      "dietType": "vegetarian",
+      "userId": "1505",
+      "ingredients": [
+        "1 pack instant ramen (no seasoning packet)",
+        "1 tbsp butter",
+        "2 garlic cloves, minced",
+        "1 tsp chili flakes",
+        "1 tsp soy sauce",
+        "1 tsp brown sugar",
+        "1 egg",
+        "1 green onion, chopped"
+      ],
+      "instructions": [
+        "Cook ramen noodles according to package and drain.",
+        "In a pan, melt butter over medium heat. Add garlic and chili flakes, sauté 30 seconds.",
+        "Add soy sauce and brown sugar. Stir well.",
+        "Toss in cooked noodles to coat.",
+        "Crack egg in center, cover with lid, steam 1-2 mins until egg is jammy.",
+        "Top with green onions and serve hot."
+      ]
+    },
+    {
+      "id": "4ff9",
+      "title": "Mango Avocado Summer Salad",
+      "description": "A refreshing tropical salad with juicy mangoes, creamy avocado, and a zesty lime dressing.",
+      "category": "salad",
+      "prepTime": 15,
+      "cookTime": 0,
+      "difficulty": "Easy",
+      "servings": 2,
+      "image": "https://img.taste.com.au/dYjhlJoQ/taste/2016/11/lettuce-avocado-and-mango-salad-59642-1.jpeg",
+      "rating": 4.9,
+      "dietType": "vegan",
+      "userId": "1505",
+      "ingredients": [
+        "1 ripe mango, diced",
+        "1 ripe avocado, diced",
+        "1/2 small red onion, thinly sliced",
+        "1 handful fresh cilantro, chopped",
+        "1 tbsp olive oil",
+        "Juice of 1 lime",
+        "Salt and pepper to taste"
+      ],
+      "instructions": [
+        "Combine mango, avocado, red onion, and cilantro in a bowl.",
+        "In a small bowl, whisk olive oil, lime juice, salt, and pepper.",
+        "Pour dressing over salad and gently toss.",
+        "Serve chilled or fresh."
+      ]
+    },
+    {
+      "id": "1dc8",
+      "title": "Honey Garlic Glazed Salmon",
+      "description": "Pan-seared salmon fillets coated in a sticky honey garlic sauce—sweet, savory, and ready in minutes.",
+      "category": "dinner",
+      "prepTime": 10,
+      "cookTime": 10,
+      "difficulty": "Medium",
+      "servings": 2,
+      "image": "https://hips.hearstapps.com/hmg-prod/images/honey-garlic-glazed-salmon-index-66be820f1f945.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
+      "rating": 4.7,
+      "dietType": "paleo",
+      "userId": "1505",
+      "ingredients": [
+        "2 salmon fillets",
+        "2 tbsp honey",
+        "2 tbsp soy sauce",
+        "3 garlic cloves, minced",
+        "1 tbsp olive oil",
+        "1/2 tsp black pepper",
+        "1 tbsp lemon juice"
+      ],
+      "instructions": [
+        "Heat olive oil in a pan over medium heat.",
+        "Add salmon fillets skin-side down and cook for 3-4 mins.",
+        "Flip and cook the other side for another 3 mins.",
+        "Mix honey, soy sauce, garlic, lemon juice, and pepper. Pour into pan.",
+        "Spoon sauce over salmon until glazed and sticky.",
+        "Serve with steamed rice or veggies."
+      ]
+    },
+    {
+      "id": "3b77",
+      "title": "Classic Tomato Basil Soup",
+      "description": "A warm and comforting tomato basil soup, perfect for chilly evenings.",
+      "category": "soup",
+      "prepTime": 10,
+      "cookTime": 25,
+      "difficulty": "Easy",
+      "servings": 4,
+      "image": "https://nourishingmeals.com/sites/default/files/styles/fullscreen_banner/public/media/CLASSIC%20TOMATO%20BASIL%20SOUP-1.jpg?h=b0b42df5&itok=UGXDvETD",
+      "rating": 4.5,
+      "dietType": "gluten-free",
+      "userId": "1505",
+      "ingredients": [
+        "1 tbsp olive oil",
+        "1 onion, diced",
+        "3 garlic cloves, minced",
+        "1 can (28 oz) crushed tomatoes",
+        "1 cup vegetable broth",
+        "1/2 cup fresh basil leaves",
+        "Salt and pepper to taste",
+        "1/2 cup coconut milk (optional for creaminess)"
+      ],
+      "instructions": [
+        "Heat olive oil in a pot. Sauté onion and garlic until soft.",
+        "Add crushed tomatoes, broth, salt, and pepper. Bring to a simmer.",
+        "Add basil and simmer for 15-20 mins.",
+        "Blend soup until smooth (or leave chunky).",
+        "Stir in coconut milk if using, heat through, and serve."
+      ]
+    },
+    {
+      "id": "2a64",
+      "title": "Chocolate Peanut Butter Bites",
+      "description": "Deliciously healthy snack bites made with oats, chocolate, and peanut butter. No oven needed!",
+      "category": "snack",
+      "prepTime": 10,
+      "cookTime": 0,
+      "difficulty": "Easy",
+      "servings": 12,
+      "image": "https://www.culinaryhill.com/wp-content/uploads/2022/10/No-Bake-Peanut-Butter-Balls-1200x800-Culinary-Hill.jpg",
+      "rating": 4.8,
+      "dietType": "high-protein",
+      "userId": "1505",
+      "ingredients": [
+        "1 cup rolled oats",
+        "1/2 cup peanut butter",
+        "1/3 cup honey or maple syrup",
+        "1/4 cup dark chocolate chips",
+        "1/2 tsp vanilla extract",
+        "Pinch of salt"
+      ],
+      "instructions": [
+        "In a bowl, combine all ingredients.",
+        "Mix until everything sticks together well.",
+        "Roll into small bite-sized balls.",
+        "Refrigerate for 30 mins to set.",
+        "Store in an airtight container in the fridge for up to 1 week."
+      ]
     }
   ],
   "users": [
